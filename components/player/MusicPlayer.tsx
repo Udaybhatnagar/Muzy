@@ -136,7 +136,7 @@ export function MusicPlayer({ roomId }: Props) {
       <div style={{ padding: '14px 18px', borderBottom: '1px solid #2a2d35', display: 'flex', alignItems: 'center', gap: 8 }}>
         <Equalizer />
         <span style={{ fontSize: 11, fontWeight: 600, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginLeft: 4 }}>Now Playing</span>
-        <Crown size={12} color="#f59e0b" style={{ marginLeft: 6 }} title="You are the owner" />
+        <Crown size={12} color="#f59e0b" style={{ marginLeft: 6 }} aria-label="You are the owner" />
         <span style={{ marginLeft: 'auto', fontSize: 11, color: '#3a3d47', background: '#17181c', padding: '2px 8px', borderRadius: 99, border: '1px solid #2a2d35', textTransform: 'capitalize' }}>
           {currentSong.platform}
         </span>
