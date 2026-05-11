@@ -1,0 +1,60 @@
+
+Day 02:-
+jab bhi use state  or effect use krenge use client likhna padega top pr apne component ko clinet component bnana pdega phle then hi use kr sakte hain..
+use async await concept for geeting solution of above problem
+Agar hmko loading show krni hai to page.tsx se upar loading.tsx ko add krna pdega jo automaticallly loading kr dega agar data fetch nhi hua hoga to..
+
+
+we can use 2 things link and router for navigation in next js router approach is bed (study why)
+
+when you are using button on click you have to make the component client side "use client"
+1:30 min se firse dekhni hai..
+
+jab pura page reload hue bina sirf jo ui pr change kra hai sirf whi ho to usko Hot reloading khete hain
+
+Day 03:-
+we are implementning file based routing
+jab kisi folder ko ignore krna hai route ke liye to () braket ka use krte hain, isko route group khete hain..
+
+Dynamic Routes ko [] mai rakhge hai like blog website hai jisme blog/1 ya blog/2 honge to unko bar bar folders mai bnanae ki jgh [postId] mai bna sakte hai..
+jab bhut sare subroute hote hain to [.....BlogID] like blog/1/2/3/4/4 it is called catch all segment..
+catch all [[..blogs]] padhna hai isko.. ya fir /blog ke liye ek seprate page.tsx bna lo..
+
+
+Day04:-
+learn about 
+server side rendering (SSR):-
+jo bhi logic hai vo server se run hokar hi aayega
+initial respnse hi server se render hokar aata hai..
+
+
+
+cliend side rendering (CSR):-rendering jo ho rhi hai vo client ke side ho rhi hai..like react 
+agar koi code beowser pr run ho rha hai vo..kyuki react ka code empty html bhejta hai jo run hoti hai browser pr ..
+react mai everything is CSR
+Next js mai bhi ho skta hai ye..
+
+static site generation(SSG):-
+Do npm run build to see this in terminal...
+it will generated once and not changes
+agar hamare code base mai koi asa component hai jo sabke liye same(static) hi rhne wala hai to usko html mai krdo (static bna do)
+
+slides link:-https://petal-estimate-4e9.notion.site/NextJS-Part-3-1637dfd107358090800ff3aaed7a5b3c
+
+
+Hydration:-
+kuch component/pages ase hai jo server par render honge but clint pr kabhi rerender nahi honge..
+agr hm next js mai use client likhte hai tab bhi jo server se hi render hokar ata hai
+server component mai hme sirf html milti hai.
+client component mai hme hmtl ke sath js file bhi milti hai..
+clinet side component server side rendered and hydrated to frontend
+hydration means intractive features ko clinet side active krna..
+like onlcick handler etc..
+clinet side component are server side rendered but hydrated at the clinet side jiski wjh se vo mili secnod ke liye intreactive nahi hote kyuki phle sirf html aati hai uske bad js file aati hai jisme intreactive things hoti hai..
+server par jo html bani vo and client par jo html bani vo alag alag ho skti hai jisko Hydration erroe khte hai (like current time fn iska output server par alag hoga and client par alag hoga jiski wjh se ye error aayega)
+
+
+
+Day 05:-
+
+

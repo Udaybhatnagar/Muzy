@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Room {
+  id            String        @id
+  name          String
+  currentSongId String?
+  createdBy     String        @default("")
+  createdAt     DateTime      @default(now())
+  songs         Song[]
+  userSessions  UserSession[]
+}
+
+model UserSession {
+  id        String   @id @default(cuid())
+  roomId    String
+  socketId  String
+  username  String
+  sessionId String
+  joinedAt  DateTime @default(now())
+  room      Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+}
+
+model Song {
+  id        String   @id @default(cuid())
+  roomId    String
+  addedBy   String
+  url       String
+  platform  String
+  title     String   @default("Unknown Title")
+  thumbnail String   @default("")
+  duration  Int      @default(0)
+  votes     Int      @default(0)
+  played    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  room      Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  songVotes Vote[]
+}
+
+model Vote {
+  id        String @id @default(cuid())
+  songId    String
+  sessionId String
+  value     Int
+  song      Song   @relation(fields: [songId], references: [id], onDelete: Cascade)
+
+  @@unique([songId, sessionId])
+}
